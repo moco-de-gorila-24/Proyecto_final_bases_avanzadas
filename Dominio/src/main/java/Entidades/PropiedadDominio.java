@@ -7,8 +7,8 @@ import Enums.EstadoActual;
  * @author Luis Alonso
  */
 public class PropiedadDominio {
-    private long idPropiedad;
-    private long idCliente;
+    private String idPropiedad;
+    private String idCliente;
     private EstadoActual estadoActual;
     private double rentaMensual;
     private String calle;
@@ -19,7 +19,7 @@ public class PropiedadDominio {
 
     }
 
-    public PropiedadDominio(long idPropiedad, long idCliente, EstadoActual estadoActual, double rentaMensual, String calle, String colonia, Integer codigoPostal) {
+    public PropiedadDominio(String idPropiedad, String idCliente, EstadoActual estadoActual, double rentaMensual, String calle, String colonia, Integer codigoPostal) {
         this.idPropiedad = idPropiedad;
         this.idCliente = idCliente;
         this.estadoActual = estadoActual;
@@ -29,19 +29,19 @@ public class PropiedadDominio {
         this.codigoPostal = codigoPostal;
     }
 
-    public long getIdPropiedad() {
+    public String getIdPropiedad() {
         return idPropiedad;
     }
 
-    public void setIdPropiedad(long idPropiedad) {
+    public void setIdPropiedad(String idPropiedad) {
         this.idPropiedad = idPropiedad;
     }
 
-    public long getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(long idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 

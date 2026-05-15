@@ -5,7 +5,7 @@ package Entidades;
  * @author Luis Alonso
  */
 public class PlanPagoDominio {
-    private long idPlanPago;
+    private String idPlanPago;
     private double deposito;
     private double primeraRenta;
     private double gastosAdministrativos;
@@ -14,18 +14,18 @@ public class PlanPagoDominio {
 
     }
 
-    public PlanPagoDominio(long idPlanPago, double deposito, double primeraRenta, double gastosAdministrativos) {
+    public PlanPagoDominio(String idPlanPago, double deposito, double primeraRenta, double gastosAdministrativos) {
         this.idPlanPago = idPlanPago;
         this.deposito = deposito;
         this.primeraRenta = primeraRenta;
         this.gastosAdministrativos = gastosAdministrativos;
     }
 
-    public long getIdPlanPago() {
+    public String getIdPlanPago() {
         return idPlanPago;
     }
 
-    public void setIdPlanPago(long idPlanPago) {
+    public void setIdPlanPago(String idPlanPago) {
         this.idPlanPago = idPlanPago;
     }
 

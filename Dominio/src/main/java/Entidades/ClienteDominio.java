@@ -5,7 +5,7 @@ package Entidades;
  * @author Luis Alonso
  */
 public class ClienteDominio {
-    private long idCliente;
+    private String idCliente;
     private String telefono;
     private double ingresosMensuales;
     private String primerNombre;
@@ -16,7 +16,7 @@ public class ClienteDominio {
 
     }
 
-    public ClienteDominio(long idCliente, String telefono, double ingresosMensuales, String primerNombre, String apellidoPaterno, String apellidoMaterno) {
+    public ClienteDominio(String idCliente, String telefono, double ingresosMensuales, String primerNombre, String apellidoPaterno, String apellidoMaterno) {
         this.idCliente = idCliente;
         this.telefono = telefono;
         this.ingresosMensuales = ingresosMensuales;
@@ -25,11 +25,11 @@ public class ClienteDominio {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public long getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(long idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 

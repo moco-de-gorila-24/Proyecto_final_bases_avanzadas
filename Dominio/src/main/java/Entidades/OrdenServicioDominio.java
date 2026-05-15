@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
  * @author Luis Alonso
  */
 public class OrdenServicioDominio {
-    private long idOrdenServicio;
-    private long idPrioridad;
+    private String idOrdenServicio;
+    private String idPropiedad;
     private EstadoActual estadoActual;
     private Prioridad prioridad;
     private String descripcion;
@@ -21,29 +21,29 @@ public class OrdenServicioDominio {
 
     }
 
-    public OrdenServicioDominio(long idOrdenServicio, long idPrioridad, EstadoActual estado, Prioridad prioridad, String descripcion, LocalDateTime fechaHora) {
+    public OrdenServicioDominio(String idOrdenServicio, String idPropiedad, EstadoActual estado, Prioridad prioridad, String descripcion, LocalDateTime fechaHora) {
         this.idOrdenServicio = idOrdenServicio;
-        this.idPrioridad = idPrioridad;
+        this.idPropiedad = idPropiedad;
         this.estadoActual = estado;
         this.prioridad = prioridad;
         this.descripcion = descripcion;
         this.fechaHora = fechaHora;
     }
 
-    public long getIdOrdenServicio() {
+    public String getIdOrdenServicio() {
         return idOrdenServicio;
     }
 
-    public void setIdOrdenServicio(long idOrdenServicio) {
+    public void setIdOrdenServicio(String idOrdenServicio) {
         this.idOrdenServicio = idOrdenServicio;
     }
 
-    public long getIdPrioridad() {
-        return idPrioridad;
+    public String getIdPropiedad() {
+        return idPropiedad;
     }
 
-    public void setIdPrioridad(long idPrioridad) {
-        this.idPrioridad = idPrioridad;
+    public void setIdPropiedad(String idPrioridad) {
+        this.idPropiedad = idPropiedad;
     }
 
     public EstadoActual getEstado() {
