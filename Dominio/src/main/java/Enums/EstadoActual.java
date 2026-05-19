@@ -5,5 +5,5 @@ package Enums;
  * @author Luis Alonso
  */
 public enum EstadoActual {
-    Rentada,Disponible
+    Rentada,Disponible, Revision, Baja
 }
