@@ -10,6 +10,7 @@
         <module>Persistencia</module>
         <module>Dominio</module>
         <module>Negocio</module>
+        <module>DTOs</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
