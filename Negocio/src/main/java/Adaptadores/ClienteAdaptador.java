@@ -1,5 +1,6 @@
 package Adaptadores;
 
+import DTOs.ClienteDTO;
 import Entidades.ClienteDominio;
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -34,5 +35,29 @@ public class ClienteAdaptador {
             return id.toHexString();
         }
         return null;
+    }
+
+    public ClienteDTO convertirEntidadADTO(ClienteDominio cliente){
+        ClienteDTO clienteDTO = new ClienteDTO();
+
+        clienteDTO.setTelefono(cliente.getTelefono());
+        clienteDTO.setIngresosMensuales(cliente.getIngresosMensuales());
+        clienteDTO.setPrimerNombre(cliente.getPrimerNombre());
+        clienteDTO.setApellidoPaterno(cliente.getApellidoPaterno());
+        clienteDTO.setApellidoMaterno(cliente.getApellidoMaterno());
+
+        return clienteDTO;
+    }
+
+    public ClienteDominio convertirDTOAEntidad(ClienteDTO cliente){
+        ClienteDominio clienteDominio = new ClienteDominio();
+
+        clienteDominio.setTelefono(cliente.getTelefono());
+        clienteDominio.setIngresosMensuales(cliente.getIngresosMensuales());
+        clienteDominio.setPrimerNombre(cliente.getPrimerNombre());
+        clienteDominio.setApellidoPaterno(cliente.getApellidoPaterno());
+        clienteDominio.setApellidoMaterno(cliente.getApellidoMaterno());
+
+        return clienteDominio;
     }
 }

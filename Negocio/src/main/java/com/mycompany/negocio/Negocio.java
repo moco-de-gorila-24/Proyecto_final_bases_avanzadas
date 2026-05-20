@@ -6,7 +6,7 @@ package com.mycompany.negocio;
 
 /**
  *
- * @author Central
+ * @author Luis
  */
 public class Negocio {
 

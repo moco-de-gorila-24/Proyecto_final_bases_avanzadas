@@ -1,5 +1,6 @@
 package Adaptadores;
 
+import DTOs.PropiedadDTO;
 import Entidades.PropiedadDominio;
 import Enums.EstadoActual;
 import org.bson.Document;
@@ -21,7 +22,7 @@ public class PropiedadAdaptador {
 
         propiedad.setIdPropiedad(convertirObjectIDTexto(document.getObjectId("_id")));
         propiedad.setIdCliente(convertirObjectIDTexto(document.getObjectId("idCliente")));
-        propiedad.setEstadoActual(EstadoActual.valueOf(document.getString("estado")));
+        propiedad.setEstadoActual(EstadoActual.valueOf(document.getString("estadoActual")));
         propiedad.setRentaMensual(document.getDouble("rentaMensual"));
         propiedad.setCalle(document.getString("calle"));
         propiedad.setColonia(document.getString("colonia"));
@@ -35,5 +36,33 @@ public class PropiedadAdaptador {
             return id.toHexString();
         }
         return null;
+    }
+
+    public PropiedadDTO convertirPropiedadADTO(PropiedadDominio propiedadDominio){
+        PropiedadDTO propiedadDTO = new PropiedadDTO();
+
+        propiedadDTO.setIdPropiedad(propiedadDominio.getIdPropiedad());
+        propiedadDTO.setIdCliente(propiedadDominio.getIdCliente());
+        propiedadDTO.setEstadoActual(propiedadDominio.getEstadoActual());
+        propiedadDTO.setRentaMensual(propiedadDominio.getRentaMensual());
+        propiedadDTO.setCalle(propiedadDominio.getCalle());
+        propiedadDTO.setColonia(propiedadDominio.getColonia());
+        propiedadDTO.setCodigoPostal(propiedadDominio.getCodigoPostal());
+
+        return propiedadDTO;
+    }
+
+    public PropiedadDominio convertirDTOAEntidad(PropiedadDTO propiedadDTO){
+        PropiedadDominio propiedadDominio = new PropiedadDominio();
+
+        propiedadDominio.setIdPropiedad(propiedadDTO.getIdPropiedad());
+        propiedadDominio.setIdCliente(propiedadDTO.getIdCliente());
+        propiedadDominio.setEstadoActual(propiedadDTO.getEstadoActual());
+        propiedadDominio.setRentaMensual(propiedadDTO.getRentaMensual());
+        propiedadDominio.setCalle(propiedadDTO.getCalle());
+        propiedadDominio.setColonia(propiedadDTO.getColonia());
+        propiedadDominio.setCodigoPostal(propiedadDTO.getCodigoPostal());
+
+        return propiedadDominio;
     }
 }

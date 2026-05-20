@@ -1,5 +1,6 @@
 package Adaptadores;
 
+import DTOs.OrdenDTO;
 import Entidades.OrdenServicioDominio;
 import Enums.EstadoActual;
 import Enums.Prioridad;
@@ -22,19 +23,19 @@ public class OrdenServicioAdaptador {
         return documento;
     }
 
-    public OrdenServicioDominio DocumentoAOrden(Document documento){
+    public OrdenServicioDominio documentoAOrden(Document documento){
         OrdenServicioDominio orden = new OrdenServicioDominio();
 
         orden.setIdOrdenServicio(convertirObjectIDTexto(documento.getObjectId("_id")));
         orden.setIdPropiedad(convertirObjectIDTexto(documento.getObjectId("idPropiedad")));
-        orden.setEstado(EstadoActual.valueOf(documento.getString("estado")));
+        orden.setEstado(EstadoActual.valueOf(documento.getString("estadoActual")));
         orden.setPrioridad(Prioridad.valueOf(documento.getString("prioridad")));
         orden.setDescripcion(documento.getString("descripcion"));
 
         LocalDateTime fechaHora = documento.getDate("fechaHora")
-                .toInstant() // sacamos la instancia de localdaet
-                .atZone(ZoneId.systemDefault()) //aplicamos la zona
-                .toLocalDateTime(); // convertimos
+                .toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime();
 
         orden.setFechaHora(fechaHora);
         return orden;
@@ -46,4 +47,31 @@ public class OrdenServicioAdaptador {
         }
         return null;
     }
+
+    public OrdenDTO convertirEntidadADTO(OrdenServicioDominio orden){
+        OrdenDTO ordenDTO = new OrdenDTO();
+
+        ordenDTO.setIdOrdenServicio(orden.getIdOrdenServicio()); // falta
+        ordenDTO.setIdPropiedad(orden.getIdPropiedad());
+        ordenDTO.setEstadoActual(orden.getEstado());
+        ordenDTO.setPrioridad(orden.getPrioridad());
+        ordenDTO.setDescripcion(orden.getDescripcion());
+        ordenDTO.setFechaHora(orden.getFechaHora());
+
+        return ordenDTO;
+    }
+
+    public OrdenServicioDominio convertirDTOAEntidad(OrdenDTO ordenDTO){
+        OrdenServicioDominio ordenServicioDominio = new OrdenServicioDominio();
+
+        ordenServicioDominio.setIdOrdenServicio(ordenDTO.getIdOrdenServicio());
+        ordenServicioDominio.setIdPropiedad(ordenDTO.getIdPropiedad());
+        ordenServicioDominio.setEstado(ordenDTO.getEstadoActual());
+        ordenServicioDominio.setPrioridad(ordenDTO.getPrioridad());
+        ordenServicioDominio.setDescripcion(ordenDTO.getDescripcion());
+        ordenServicioDominio.setFechaHora(ordenDTO.getFechaHora());
+
+        return ordenServicioDominio;
+    }
+
 }
