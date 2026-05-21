@@ -2,7 +2,7 @@ package Adaptadores;
 
 import DTOs.OrdenDTO;
 import Entidades.OrdenServicioDominio;
-import Enums.EstadoActual;
+import Enums.EstadoOrden;
 import Enums.Prioridad;
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -28,7 +28,7 @@ public class OrdenServicioAdaptador {
 
         orden.setIdOrdenServicio(convertirObjectIDTexto(documento.getObjectId("_id")));
         orden.setIdPropiedad(convertirObjectIDTexto(documento.getObjectId("idPropiedad")));
-        orden.setEstado(EstadoActual.valueOf(documento.getString("estadoActual")));
+        orden.setEstado(EstadoOrden.valueOf(documento.getString("estadoActual")));
         orden.setPrioridad(Prioridad.valueOf(documento.getString("prioridad")));
         orden.setDescripcion(documento.getString("descripcion"));
 

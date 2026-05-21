@@ -1,6 +1,6 @@
 package Entidades;
 
-import Enums.EstadoActual;
+import Enums.EstadoOrden;
 import Enums.Prioridad;
 
 import java.time.LocalDateTime;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class OrdenServicioDominio {
     private String idOrdenServicio;
     private String idPropiedad;
-    private EstadoActual estadoActual;
+    private EstadoOrden estadoActual;
     private Prioridad prioridad;
     private String descripcion;
     private LocalDateTime fechaHora;
@@ -21,10 +21,10 @@ public class OrdenServicioDominio {
 
     }
 
-    public OrdenServicioDominio(String idOrdenServicio, String idPropiedad, EstadoActual estado, Prioridad prioridad, String descripcion, LocalDateTime fechaHora) {
+    public OrdenServicioDominio(String idOrdenServicio, String idPropiedad,Prioridad prioridad, String descripcion, LocalDateTime fechaHora) {
         this.idOrdenServicio = idOrdenServicio;
         this.idPropiedad = idPropiedad;
-        this.estadoActual = estado;
+        this.estadoActual = EstadoOrden.Pendiente;
         this.prioridad = prioridad;
         this.descripcion = descripcion;
         this.fechaHora = fechaHora;
@@ -46,11 +46,11 @@ public class OrdenServicioDominio {
         this.idPropiedad = idPropiedad;
     }
 
-    public EstadoActual getEstado() {
+    public EstadoOrden getEstado() {
         return estadoActual;
     }
 
-    public void setEstado(EstadoActual estado) {
+    public void setEstado(EstadoOrden estado) {
         this.estadoActual = estado;
     }
 

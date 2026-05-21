@@ -16,6 +16,14 @@ public class ClienteDominio {
 
     }
 
+    public ClienteDominio(String telefono, double ingresosMensuales, String primerNombre, String apellidoPaterno, String apellidoMaterno) {
+        this.telefono = telefono;
+        this.ingresosMensuales = ingresosMensuales;
+        this.primerNombre = primerNombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
     public ClienteDominio(String idCliente, String telefono, double ingresosMensuales, String primerNombre, String apellidoPaterno, String apellidoMaterno) {
         this.idCliente = idCliente;
         this.telefono = telefono;

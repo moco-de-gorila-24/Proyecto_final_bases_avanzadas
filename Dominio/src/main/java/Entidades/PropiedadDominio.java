@@ -1,6 +1,7 @@
 package Entidades;
 
-import Enums.EstadoActual;
+import Enums.EstadoOrden;
+import Enums.EstadoPropiedad;
 
 /**
  *
@@ -9,7 +10,7 @@ import Enums.EstadoActual;
 public class PropiedadDominio {
     private String idPropiedad;
     private String idCliente;
-    private EstadoActual estadoActual;
+    private EstadoPropiedad estadoPropiedad;
     private double rentaMensual;
     private String calle;
     private String colonia;
@@ -19,10 +20,10 @@ public class PropiedadDominio {
 
     }
 
-    public PropiedadDominio(String idPropiedad, String idCliente, EstadoActual estadoActual, double rentaMensual, String calle, String colonia, Integer codigoPostal) {
+    public PropiedadDominio(String idCliente, EstadoPropiedad estadoPropiedad, double rentaMensual, String calle, String colonia, Integer codigoPostal) {
         this.idPropiedad = idPropiedad;
         this.idCliente = idCliente;
-        this.estadoActual = estadoActual;
+        this.estadoPropiedad = estadoPropiedad;
         this.rentaMensual = rentaMensual;
         this.calle = calle;
         this.colonia = colonia;
@@ -45,12 +46,12 @@ public class PropiedadDominio {
         this.idCliente = idCliente;
     }
 
-    public EstadoActual getEstadoActual() {
-        return estadoActual;
+    public EstadoPropiedad getEstadoActual() {
+        return estadoPropiedad;
     }
 
-    public void setEstadoActual(EstadoActual estadoActual) {
-        this.estadoActual = estadoActual;
+    public void setEstadoActual(EstadoPropiedad estadoPropiedad) {
+        this.estadoPropiedad = estadoPropiedad;
     }
 
     public double getRentaMensual() {

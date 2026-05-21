@@ -2,13 +2,15 @@ package Adaptadores;
 
 import DTOs.PropiedadDTO;
 import Entidades.PropiedadDominio;
-import Enums.EstadoActual;
+import Enums.EstadoOrden;
+import Enums.EstadoPropiedad;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
 public class PropiedadAdaptador {
     public Document convertirADocumento(PropiedadDominio propiedad){
-        Document documento = new Document("estadoActual", propiedad.getEstadoActual())
+        Document documento = new Document("idCliente", new ObjectId(propiedad.getIdCliente()))
+                .append("estadoActual", propiedad.getEstadoActual())
                 .append("rentaMensual", propiedad.getRentaMensual())
                 .append("calle", propiedad.getCalle())
                 .append("colonia", propiedad.getColonia())
@@ -22,7 +24,7 @@ public class PropiedadAdaptador {
 
         propiedad.setIdPropiedad(convertirObjectIDTexto(document.getObjectId("_id")));
         propiedad.setIdCliente(convertirObjectIDTexto(document.getObjectId("idCliente")));
-        propiedad.setEstadoActual(EstadoActual.valueOf(document.getString("estadoActual")));
+        propiedad.setEstadoActual(EstadoPropiedad.valueOf(document.getString("estadoActual")));
         propiedad.setRentaMensual(document.getDouble("rentaMensual"));
         propiedad.setCalle(document.getString("calle"));
         propiedad.setColonia(document.getString("colonia"));
