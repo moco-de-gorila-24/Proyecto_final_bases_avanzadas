@@ -6,5 +6,5 @@ package Enums;
  */
 
 public enum Prioridad {
-    Pendiente, Cancelado, Completado,
+    Baja, Media, Alta
 }

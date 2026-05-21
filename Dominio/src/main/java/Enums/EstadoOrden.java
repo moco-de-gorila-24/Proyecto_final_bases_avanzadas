@@ -4,6 +4,6 @@ package Enums;
  *
  * @author Luis Alonso
  */
-public enum EstadoActual {
-    Rentada,Disponible, Revision, Baja
+public enum EstadoOrden {
+    Pendiente, Completada, Resuelta, Cancelada
 }
